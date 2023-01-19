@@ -9,6 +9,8 @@ use yii\web\Response;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
+use app\models\Article;
+use yii\data\Pagination;
 
 class SiteController extends Controller
 {
@@ -61,7 +63,32 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
+
+        $query = Article::find();
+
+// get the total number of articles (but do not fetch the article data yet)
+
+        $count = $query->count();
+
+// create a pagination object with the total count
+
+        $pagination = new Pagination(['totalCount' => $count, 'pageSize'=> 1]);
+
+// limit the query using the pagination and retrieve the articles
+
+        $articles = $query->offset($pagination->offset)
+
+            ->limit($pagination->limit)
+
+            ->all();
+
+        return $this->render('index',[
+
+            'articles'=>$articles,
+
+            'pagination'=>$pagination
+
+        ]);
     }
 
     /**
@@ -130,4 +157,6 @@ class SiteController extends Controller
     {
         return $this->render('single');
     }
+
+
 }
