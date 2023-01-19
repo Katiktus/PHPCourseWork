@@ -11,6 +11,8 @@ use app\models\LoginForm;
 use app\models\ContactForm;
 use app\models\Article;
 use yii\data\Pagination;
+use app\models\Topic;
+
 
 class SiteController extends Controller
 {
@@ -63,6 +65,9 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
+        $popular = Article::find()->orderBy('viewed desc')->limit(3)->all();
+        $recent = Article::find()->orderBy('date desc')->limit(3)->all();
+        $topics = Topic::find()->all();
 
         $query = Article::find();
 
@@ -83,11 +88,11 @@ class SiteController extends Controller
             ->all();
 
         return $this->render('index',[
-
             'articles'=>$articles,
-
-            'pagination'=>$pagination
-
+            'popular' => $popular,
+            'recent' => $recent,
+            'topics' => $topics,
+            'pagination'=>$pagination,
         ]);
     }
 
