@@ -2,6 +2,9 @@
 
 namespace app\modules\admin;
 
+use Yii;
+use yii\filters\AccessControl;
+
 /**
  * admin module definition class
  */
@@ -36,7 +39,7 @@ class Module extends \yii\base\Module
                         'matchCallback' =>  function($rule, $action)
                         {
                             if (isset(Yii::$app->user->identity->login)){
-                                return (Yii::$app->user->identity->login == 'katpog2001@gmail.com');
+                                return (Yii::$app->user->identity->login == 'test@gmail.com');
                             }
                             else{
                                 return false;
