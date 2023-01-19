@@ -131,6 +131,7 @@ class SiteController extends Controller
         $popular = Article::find()->orderBy('viewed desc')->limit(3)->all();
         $recent = Article::find()->orderBy('date desc')->limit(3)->all();
         $topics = Topic::find()->all();
+        $article->viewedCounter();
 
         $comments = $article->comments;
         $commentsParent = array_filter($comments, function ($k) {
