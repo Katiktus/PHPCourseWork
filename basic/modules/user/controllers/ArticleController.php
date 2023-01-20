@@ -119,7 +119,6 @@ class ArticleController extends Controller
     public function actionDelete($id)
     {
         $this->findModel($id)->delete();
-        $this->check($id);
 
         return $this->redirect(['index']);
     }
