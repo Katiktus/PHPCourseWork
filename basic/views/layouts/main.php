@@ -55,25 +55,14 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
     NavBar::end();
     ?>
 </header>
-
 <div class="container">
-
-    <!--main content start-->
-
     <div class="main-content">
-
         <div class="container">
-
             <div class="row">
-
                 <?= $content ?>
-
             </div>
-
         </div>
-
     </div>
-
 </div>
 
 <?php $this->endBody() ?>

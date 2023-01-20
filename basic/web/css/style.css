@@ -3,7 +3,7 @@
 
 body {
     font-family: 'Open Sans', sans-serif;
-    background-image: url('img_1.png');
+    background-image: url('img_4.png');
 }
 
 .main-content {
@@ -16,7 +16,7 @@ body {
 }
 
 .post {
-    background: #fff;
+    background: rgb(187,156,174, 0.9);
     margin-bottom: 50px;
 }
 
@@ -70,7 +70,6 @@ span, p, input {
 }
 
 .post .social-share {
-    border-top: 1px solid #EEE;
     padding: 15px 0 75px;
 }
 
@@ -139,8 +138,8 @@ span, p, input {
 .widget {
     padding: 37px 30px;
     margin-bottom: 35px;
-    background-color: rgba(255, 255, 255, 0.8);
-    border: 1px solid #eee;
+
+    background-color: rgb(187,156,174, 0.9);
 }
 
 .widget-title {
@@ -155,7 +154,7 @@ span, p, input {
 }
 
 .popular-post {
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #000;
     padding: 25px 0 20px;
 }
 

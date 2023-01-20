@@ -12,7 +12,7 @@ use yii\helpers\Url;
                     <div class="p-overlay"></div>
                 </a>
                 <div class="p-content">
-                    <a href="<?= Url::toRoute(['/view', 'id'=>$article->id])?>" class="text-uppercase">Home is peaceful Place</a>
+                    <a href="<?= Url::toRoute(['/view', 'id'=>$article->id])?>" class="text-uppercase">"<?= $article->title; ?></a>
                     <span class="p-date"><?= $article->getDate(); ?></span>
                 </div>
             </div>
@@ -30,7 +30,7 @@ use yii\helpers\Url;
                         </a>
                     </div>
                     <div class="p-content">
-                        <a href="<?= Url::toRoute(['/view', 'id'=>$article->id])?>" class="text-uppercase">Home is peaceful Place</a>
+                        <a href="<?= Url::toRoute(['/view', 'id'=>$article->id])?>" class="text-uppercase">"<?= $article->title; ?></a>
                         <span class="p-date"><?= $article->getDate(); ?></span>
                     </div>
                 </div>

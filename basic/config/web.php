@@ -48,6 +48,7 @@ $config = [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => array(
+                '<alias:\w+>' => 'site/<alias>',
                 ''=>'site/index',
                 '<action>'=>'site/<action>',
                 'admin/index' => 'admin/default/index',
