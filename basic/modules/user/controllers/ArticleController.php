@@ -5,6 +5,7 @@ namespace app\modules\user\controllers;
 use app\models\Article;
 use app\models\ArticleSearch;
 use app\models\ImageUpload;
+use Yii;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
